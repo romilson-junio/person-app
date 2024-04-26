@@ -1,0 +1,41 @@
+{
+    "name": "test-person",
+    "version": "1.0.0",
+    "description": "Prova de Recrutamento e Seleção – Athenas",
+    "main": "index.html",
+    "scripts": {
+        "start": "grunt",
+        "test": "karma start karma.conf.js"
+    },
+    "author": "Romilson Júnio Abreu Pereira",
+    "license": "ISC",
+    "dependencies": {
+        "angular": "^1.5.2",
+        "angular-confirm1": "^1.1.0",
+        "angular-route": "^1.5.2",
+        "angularjs-toast": "^4.0.1",
+        "bootstrap": "5.0",
+        "jquery": "^3.7.1",
+        "popper.js": "^1.16.1-lts"
+    },
+    "devDependencies": {
+        "angular-mocks": "^1.5.2",
+        "grunt": "^1.3.0",
+        "grunt-cli": "^1.3.2",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-connect": "^3.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-cssmin": "^3.0.0",
+        "grunt-contrib-uglify": "^5.0.0",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-karma": "^4.0.0",
+        "jasmine": "^3.6.1",
+        "karma": "^6.4.3",
+        "karma-cli": "^2.0.0",
+        "karma-coverage": "^2.0.3",
+        "karma-jasmine": "^4.0.1",
+        "karma-phantomjs-launcher": "^0.2.3",
+        "phantomjs-polyfill": "0.0.2",
+        "promise-polyfill": "^8.2.0"
+    }
+}

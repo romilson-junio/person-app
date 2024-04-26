@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person</title>
+
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/angularjs-toast/angularjs-toast.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="http://localhost:35729/livereload.js"></script>
+
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="vendor/angularjs-toast/angularjs-toast.min.js"></script>
+
+    <script src="app.module.js"></script>
+    <script src="app.routes.js"></script>
+
+    <script src="services/person.service.js"></script>
+
+    <script src="utils/constants.js"></script>
+
+    <script src="pages/person/person.controller.js"></script>
+    
+</head>
+
+<body>
+    <toast></toast>
+    <ng-view></ng-view>
+
+    <script type="text/javascript" src="vendor/jquery/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

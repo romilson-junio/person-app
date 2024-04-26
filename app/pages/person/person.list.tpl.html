@@ -1,0 +1,111 @@
+<div ng-controller="PersonController as vm" ng-init="vm.list()" >
+
+  <div id="container-fluid" class="container-fluid">
+    <div class="row m-5">
+      <div class="col-12 text-center">
+        <h1>Pessoas</h1>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-10">
+        <div class="row">
+          <form class="form-goup border-radius-form" name="vm.formFilter" ng-model="vm.filter">
+            <div class="row">
+              <div class="col-1">
+                <div class="mb-3">
+                  <label for="id" class="form-label">Id</label>
+                  <input type="number" min="0" class="form-control" id="id" ng-model="vm.filter.id"></input>
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="name" ng-model="vm.filter.name"></input>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="mb-3">
+                  <label for="cpf" class="form-label">CPF</label>
+                  <input type="text" class="form-control" id="cpf" ng-model="vm.filter.cpf"></input>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <div class="mb-3">
+                  Sexo
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="M" id="sex-masculine" ng-model="vm.filter.masculine">
+                    <label class="form-check-label" for="sex-masculine">Masculino</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="F" id="sex-feminine" ng-model="vm.filter.feminine">
+                    <label class="form-check-label" for="sex-feminine">Feminino</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="d-grid gap-2">
+          <button type="button" class="btn btn-secondary" ng-click="vm.search()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            Pesquisar
+          </button>
+          <button type="button" class="btn btn-dark" ng-click="vm.filterClear()">
+            <i class="fa fa-eraser" aria-hidden="true"></i>
+            Limpar
+          </button>
+          <a class="btn btn-primary" href="/#!/person">
+            <span class="me-2">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </span>
+            Novo
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-12">
+        <table id="table-person" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Data de Nascimento</th>
+              <th scope="col">CPF</th>
+              <th scope="col">Sexo</th>
+              <th scope="col">Altura</th>
+              <th scope="col">Peso</th>
+              <th scope="col" class="text-center">Operação</th>
+            </tr>
+          </thead>
+          <tbody ng-repeat="person in vm.persons">
+            <tr>
+              <th scope="row">{{person.id}}</th>
+              <td>{{person.name}}</td>
+              <td>{{person.birthDate}}</td>
+              <td>{{person.cpf}}</td>
+              <td>{{person.sex}}</td>
+              <td>{{person.height}} M</td>
+              <td>{{person.weight}} Kg</td>
+              <td class="text-center">
+                <a class="btn btn-outline-secondary" href="/#!/person/edit?id={{person.id}}">
+                  <span>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <button type="button" class="btn btn-outline-danger" ng-click="vm.remove(person.id)">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-outline-info" ng-click="vm.imc(person.id)">IMC</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

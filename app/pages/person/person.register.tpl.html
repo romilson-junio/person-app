@@ -1,0 +1,93 @@
+<div ng-controller="PersonController as vm" >
+  
+  <div class="container">
+    <div class="row m-5">
+      <div class="col-12 text-center">
+        <h1>Cadastro de Pessoas</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        
+        <form class="form-goup border-radius-form" name="vm.form" ng-model="vm.person" ng-submit="vm.save()">
+          
+          <div class="form-floating mb-3">
+            <input class="form-control" placeholder="Digite o nome aqui" id="name" ng-model="vm.person.name" required></input>
+            <label for="name">Nome</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" placeholder="Digite o cpf aqui" id="cpf" ng-model="vm.person.cpf" required></input>
+            <label for="cpf">CPF</label>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <div class="form-floating mb-3">
+                <input type="date" class="form-control" placeholder="Digite a data de nascimento aqui" id="birthDate" ng-model="vm.person.birthDate" required></input>
+                <label for="birthDate">Data de Nascimento</label>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-floating mb-3">
+                <input type="number" min="0" step="0.01" class="form-control" placeholder="Digite a altura aqui" id="height" ng-model="vm.person.height" required></input>
+                <label for="height">Altura</label>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-floating mb-3">
+                <input type="number" min="0" step="000.01" class="form-control" placeholder="Digite o peso aqui" id="weight" ng-model="vm.person.weight" required></input>
+                <label for="weight">Peso</label>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-12">
+              
+                <label class="form-label">Sexo</label>
+                <div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex-m" id="sex-m" ng-model="vm.person.sex" checked value="M">
+                    <label class="form-check-label" for="sex-m">
+                      Masculino
+                    </label>
+                  </div>
+  
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex-f" id="sex-f" ng-model="vm.person.sex" value="F">
+                    <label class="form-check-label" for="sex-f">
+                      Feminino
+                    </label>
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-outline-secondary" ng-click="vm.back()">
+            <span class="me-2">
+              <i class="fa fa-reply" aria-hidden="true"></i>
+            </span>
+            Voltar
+          </button>
+          <button type="submit" class="btn btn-outline-success" ng-disabled="!vm.validForm()">
+            <span class="me-2">
+              <i class="fa fa-floppy-o" aria-hidden="true"></i>
+            </span>
+            Salvar
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
